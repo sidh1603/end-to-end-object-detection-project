@@ -41,6 +41,7 @@ class ModelTrainer:
 
             os.system(f"cd yolov5/ && python train.py --img 416 --batch {self.model_trainer_config.batch_size} --epochs {self.model_trainer_config.no_epochs} --data ../data.yaml --cfg ./models/custom_yolov5s.yaml --weights {self.model_trainer_config.weight_name} --name yolov5s_results  --cache")
             os.system("cp yolov5/runs/train/yolov5s_results/weights/best.pt yolov5/")
+            #os.system("cp yolov5/runs/train/yolov5s_results/weights/prod-model.pt yolov5/")
             os.makedirs(self.model_trainer_config.model_trainer_dir, exist_ok=True)
             os.system(f"cp yolov5/runs/train/yolov5s_results/weights/best.pt {self.model_trainer_config.model_trainer_dir}/")
            
@@ -51,6 +52,7 @@ class ModelTrainer:
 
             model_trainer_artifact = ModelTrainerArtifact(
                 trained_model_file_path="yolov5/best.pt",
+                #trained_model_file_path="yolov5/prod-model.pt,
             )
 
             logging.info("Exited initiate_model_trainer method of ModelTrainer class")

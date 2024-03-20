@@ -14,6 +14,18 @@ DATA_DOWNLOAD_URL: str = "https://github.com/entbappy/Branching-tutorial/raw/mas
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
 """
 Data Validation realted contant start with DATA_VALIDATION VAR NAME
 """
@@ -43,5 +55,5 @@ MODEL_TRAINER_BATCH_SIZE: int = 16
 """
 MODEL PUSHER related constant start with MODEL_PUSHER var name
 """
-BUCKET_NAME = "sign-lang-2024"
+BUCKET_NAME = "sign-lang-2025"
 S3_MODEL_NAME = "best.pt"
