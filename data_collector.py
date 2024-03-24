@@ -3,9 +3,9 @@ import cv2
 import time
 import uuid
 
-IMAGE_PATH ="COLLECTEDIMAGES"
+IMAGE_PATH ="CollectedImages1"
 
-labels=['hello3', 'yes', 'no', 'thanks', 'please', 'iloveyou']
+labels=['hello', 'Yes', 'no', 'thanks', 'please', 'iloveyou']
 
 
 number_of_images= 5

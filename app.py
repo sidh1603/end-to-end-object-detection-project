@@ -38,7 +38,7 @@ def predictRoute():
         image = request.json['image']
         decodeImage(image, clApp.filename)
 
-        os.system("cd yolov5/ && python detect.py --weights best.pt --img 416 --conf 0.5 --source ../data/inputImage.jpg")
+        os.system("cd yolov5/ && python detect.py --weights sid_model.pt --img 416 --conf 0.5 --source ../data/inputImage.jpg")
 
         opencodedbase64 = encodeImageIntoBase64("yolov5/runs/detect/exp/inputImage.jpg")
         result = {"image": opencodedbase64.decode('utf-8')}
@@ -62,7 +62,7 @@ def predictRoute():
 @cross_origin()
 def predictLive():
     try:
-        os.system("cd yolov5/ && python detect.py --weights best.pt --img 416 --conf 0.5 --source 0")
+        os.system("cd yolov5/ && python detect.py --weights sid_model.pt --img 416 --conf 0.5 --source 4")
         os.system("rm -rf yolov5/runs")
         return "Camera starting!!" 
 
@@ -75,4 +75,4 @@ def predictLive():
 
 if __name__ == "__main__":
     clApp = ClientApp()
-    app.run(host="0.0.0.0", port=8081)
+    app.run(host="0.0.0.0", port=8080)
